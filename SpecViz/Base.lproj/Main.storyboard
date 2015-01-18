@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C94b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eVI-v4-a52">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--GLKit View Controller-->
+        <scene sceneID="9dV-09-ICE">
+            <objects>
+                <glkViewController preferredFramesPerSecond="30" id="eVI-v4-a52" customClass="SpecVizViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HMt-A5-H7A"/>
+                        <viewControllerLayoutGuide type="bottom" id="69y-Zi-3fb"/>
+                    </layoutGuides>
+                    <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" enableSetNeedsDisplay="NO" id="JtH-U8-7BB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZO-9e-zN7">
+                                <rect key="frame" x="281" y="557" width="39" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="39" id="1dR-Sq-12x"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="U47-lg-lTN"/>
+                                </constraints>
+                                <state key="normal" title="mode">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="modeChanged:" destination="eVI-v4-a52" eventType="touchUpInside" id="KzR-Ud-BQE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qrv-jq-Jyt">
+                                <rect key="frame" x="507" y="60" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8dN-S9-1dy"/>
+                                    <constraint firstAttribute="width" constant="30" id="TbG-LY-QMk"/>
+                                </constraints>
+                                <state key="normal" title="Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playPause:" destination="eVI-v4-a52" eventType="touchUpInside" id="3My-Vh-9f9"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tjk-Eb-FpJ">
+                                <rect key="frame" x="456" y="557" width="81" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="81" id="1fM-LZ-3bi"/>
+                                    <constraint firstAttribute="height" constant="30" id="NlG-bJ-IL7"/>
+                                </constraints>
+                                <state key="normal" title="Press Me!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBig:" destination="eVI-v4-a52" eventType="touchUpInside" id="LYw-uy-RwR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Tjk-Eb-FpJ" secondAttribute="trailing" constant="55" id="6bc-NO-Nmh"/>
+                            <constraint firstItem="69y-Zi-3fb" firstAttribute="top" secondItem="IZO-9e-zN7" secondAttribute="bottom" constant="13" id="Ehk-jJ-Lzh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Qrv-jq-Jyt" secondAttribute="trailing" constant="55" id="InI-Xk-2ef"/>
+                            <constraint firstItem="69y-Zi-3fb" firstAttribute="top" secondItem="Tjk-Eb-FpJ" secondAttribute="bottom" constant="13" id="K1C-NG-8Xk"/>
+                            <constraint firstAttribute="centerX" secondItem="IZO-9e-zN7" secondAttribute="centerX" id="TlA-a4-f29"/>
+                            <constraint firstItem="Qrv-jq-Jyt" firstAttribute="top" secondItem="HMt-A5-H7A" secondAttribute="bottom" constant="40" id="wc5-Ah-Rdx"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="delegate" destination="eVI-v4-a52" id="vLh-6S-nRy"/>
+                        </connections>
+                    </glkView>
+                    <navigationItem key="navigationItem" id="fEp-uA-LI7"/>
+                    <connections>
+                        <outlet property="playButton" destination="Qrv-jq-Jyt" id="t7K-59-f6r"/>
+                        <outlet property="pressMe" destination="Tjk-Eb-FpJ" id="Nt4-Cg-PSB"/>
+                    </connections>
+                </glkViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ykr-cJ-4LD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-162" y="265"/>
+        </scene>
+    </scenes>
+</document>
